@@ -2,13 +2,17 @@ import asyncio
 import datetime
 import re
 from zoneinfo import ZoneInfo
+import os
+import dotenv
 
 import discord
 from discord import app_commands
 from discord.ext import commands
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ============ CONFIG ============
-TOKEN = "MTUwOTcwODA1NDQ0MDk2ODE5Mg.GIZTj1.6ECt-iPD_IIvv0wLS9FaEt8RDzUh2AKchBspjo"
 GUILD_ID = 1500141037354750104
 
 # Roles
@@ -859,4 +863,4 @@ async def on_ready():
 
 
 # ---------- Run ----------
-bot.run(TOKEN)
+bot.run(os.getenv("TOKEN"))
